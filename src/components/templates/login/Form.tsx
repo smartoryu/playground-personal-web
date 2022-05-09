@@ -14,7 +14,7 @@ import {
 import { UilEye, UilEyeSlash, UilLock, UilUser } from "@iconscout/react-unicons";
 import { useState } from "react";
 import { Controller, FieldError, useForm } from "react-hook-form";
-import { ILoginForm } from "../../../modules";
+import { ILoginForm } from "../../../@types/login";
 
 interface P {
   onSignIn: (data: ILoginForm) => void;
