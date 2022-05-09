@@ -141,10 +141,9 @@ function FormInput({
   return (
     <FormControl isInvalid={!!error}>
       <InputGroup>
-        <InputLeftElement
-          pointerEvents="none"
-          children={<Icon as={leftIcon} color={!!error ? "red.400" : "#203060"} />}
-        />
+        <InputLeftElement pointerEvents="none">
+          <Icon as={leftIcon} color={!!error ? "red.400" : "#203060"} />
+        </InputLeftElement>
         {children}
         {toggleShowing && (
           <InputRightElement width="3.5rem">
