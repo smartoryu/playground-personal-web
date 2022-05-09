@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
         <ModalContent>
           <ModalCloseButton />
-          <ModalBody p={5}>
+          <ModalBody p={4}>
             <LoginPage />
           </ModalBody>
         </ModalContent>

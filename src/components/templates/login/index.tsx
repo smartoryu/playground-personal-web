@@ -1,13 +1,4 @@
-import {
-  AspectRatio,
-  Box,
-  Center,
-  Flex,
-  Image,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Center, Flex, Image, Link, Text, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import LoginForm from "./Form";
@@ -18,7 +9,7 @@ const LoginPage: NextPage = () => {
 
   return (
     <Flex>
-      <Box p={100} w={600} bg="#F6F6F6">
+      <Box p={100} w="600px" h="calc(100vh - 32px)" bg="#F6F6F6">
         <LoginHeader />
 
         <LoginForm

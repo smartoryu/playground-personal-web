@@ -4,7 +4,6 @@ import {
   Flex,
   FormControl,
   FormErrorMessage,
-  FormHelperText,
   Icon,
   Input,
   InputGroup,
@@ -29,7 +28,6 @@ export default function LoginForm({ onSignIn }: P) {
     control,
     formState: { errors },
     handleSubmit,
-    watch,
   } = useForm<ILoginForm>({
     defaultValues: {
       username: "",
@@ -39,13 +37,8 @@ export default function LoginForm({ onSignIn }: P) {
   });
 
   return (
-    <form
-      onSubmit={handleSubmit(
-        (data) => onSignIn(data),
-        (err) => console.log(err)
-      )}
-    >
-      <Stack mt={10} spacing={10}>
+    <form onSubmit={handleSubmit(onSignIn, console.log)}>
+      <Stack mt={9} spacing={10}>
         <Controller
           control={control}
           name="username"
@@ -111,10 +104,10 @@ export default function LoginForm({ onSignIn }: P) {
         <Button
           flex={1}
           bg="#F35D5D"
-          color="#fff"
           _hover={{ bg: "red.500" }}
           _active={{ bg: "red.600" }}
-          mt="50px"
+          color="#fff"
+          mt="40px"
           type="submit"
         >
           Sign In
@@ -154,11 +147,7 @@ function FormInput({
         )}
       </InputGroup>
 
-      {/* {!!error ? (
-        <FormErrorMessage>{error.message}</FormErrorMessage>
-      ) : (
-        <FormHelperText>Required</FormHelperText>
-      )} */}
+      {!!error && <FormErrorMessage>{error.message}</FormErrorMessage>}
     </FormControl>
   );
 }
